@@ -84,7 +84,6 @@ class NoteList extends React.Component {
           updateNote(idx);
         }
       }
-    }
   }
 
   getAllNotes(userId, roomId) {
