@@ -134,8 +134,9 @@ class NoteList extends React.Component {
             return (<div key={i}>
               <Note key={i} noteInfo={note} tab={this.props.tab} view={this.state.view} classColor={roomParticipants[note.originalUserId]} />
               {note.arrow ? (<div className='row'><i className={'fa ion-arrow-right-c fa-2x col-xs-1 ion-arrow-right-c'} style={{color: '#872100'}}></i></div>)
-            : ('')
-          }</div>); });
+                : ('')
+              }</div>);
+          });
         } else if (this.props.tab === 'Thoughts') {
           return this.props.note.justThoughts.map((note, i)=>(
             <Note key={i} noteInfo={note} tab={this.props.tab} view={this.state.view} />
@@ -155,9 +156,9 @@ class NoteList extends React.Component {
     let listClass = this.state.view === 'compile' ? 'note-list compiled' : 'note-list';
     return (
       this.state.loaded ? (
-      <div className={listClass}>
-        {showNotes()}
-      </div> ) : (<div></div>)
+        <div className={listClass}>
+          {showNotes()}
+        </div> ) : (<div></div>)
     );
   }
 }
